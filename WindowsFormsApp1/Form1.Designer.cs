@@ -43,6 +43,8 @@
             this.statusStrip1.Size = new System.Drawing.Size(176, 22);
             this.statusStrip1.TabIndex = 0;
             this.statusStrip1.Text = "statusStrip1";
+            //adding this line fixes .net core
+            //this.statusStrip1.Font = new System.Drawing.Font(this.statusStrip1.Font, System.Drawing.FontStyle.Italic);
             // 
             // toolStripProgressBar1
             // 
@@ -68,8 +70,14 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.statusStrip1.ResumeLayout(false);
+            showScale();
+            //scaling required: All, True
             this.statusStrip1.PerformLayout();
+            showScale();
+            //scaling required: None, True (net core: All, True)
             this.ResumeLayout(false);
+            //scaling required: None, False
+            showScale();
             this.PerformLayout();
 
         }
